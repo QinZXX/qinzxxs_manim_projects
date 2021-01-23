@@ -52,6 +52,20 @@ python ./manim.py example_scenes.py SquareToCircle -pl
 
 将会生成示例并播放。
 
+**生成：**
+
+```bash
+manim ./sum_of_squares -a -p -ql
+```
+
+```
+-p表示生成后即使用默认播放器播放。
+
+-ql表示低质量生成，速度较快。
+
+-a表示生成代码中所有的类项。
+```
+
 ### 直接使用 (Windows)
 
 1. [安装ffmpeg](https://www.wikihow.com/Install-FFmpeg-on-Windows)。
@@ -75,19 +89,25 @@ pip install -r requirements.txt
 python manim.py example_scenes.py SquareToCircle -pl
 ```
 
-### 生成：
+**生成：**
 
-```bash
-manim ./sum_of_squares -a -p -ql
+```sh
+python -m manim example_scenes.py SquareToCircle -pl
 ```
 
-```
--p表示生成后即使用默认播放器播放。
+上面命令中的`-p `标志用于预览(preview)，这意味着视频文件在渲染完成后会自动打开。`-l`标志用于在较低质量下更快的渲染。
 
--ql表示低质量生成，速度较快。
+一些其他有用的选项：
 
--a表示生成代码中所有的类项。
-```
+- `-s` 跳过结尾只展示最后一帧。
+- `-n ` 跳过前面n帧动画。
+- `-f` to show the file in finder (for OSX).
+
+设置环境变量 `MEDIA_DIR` 可以指定图片和动画文件的生成位置。 
+
+浏览文件夹 `old_projects` 可以看到以前3b1b 的视频。注意，环境场次被做做成库，但是没有考虑向后兼容性。要运行以前的项目，你必须返回完成该项目的那次提交节点。
+
+当创作一个场景时， `-sp` 选项可以帮助你只查看作品结尾是样子，而不需要生成整个动画。使用 `-n` 选项也可以跳过一些动画。 
 
 ### 其他处理
 
